@@ -18,7 +18,7 @@ jobs:
 
       - name: Get Secret Object
         run: |
-          secret_object=$(aws secretsmanager get-secret-value --secret-id dev/superheros --query SecretString --output json)
+          secret_object=$(aws secretsmanager get-secret-value --secret-id dev/superheroes --query SecretString --output json)
 
           # Parse specific keys from the secret object
           secret_value_superhero1=$(echo "$secret_object" | jq -r '. | fromjson | .superhero1')
